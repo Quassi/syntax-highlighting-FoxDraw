@@ -1,0 +1,25 @@
+%YAML 1.2
+---
+# See http://www.sublimetext.com/docs/3/syntax.html
+name: FoxDraw-G
+file_extensions:
+  - g
+scope: drawing.g
+variables:
+  TEST_commands: '(mtran0|endm|vis |detect |fcolor |fstyle |finter |fdir |fpercent |ecolor |estyle |ewidth |line|move|scale|filled|userword|tcolor |bcolor |height |path |font |prec |align |size |text|userdata|dynprop|frect|backgrflag|refpoint|group|endg|rect)'
+contexts:
+  main:
+
+# TEST COMMANDS
+    - match: \b{{TEST_commands}}\b
+      scope: string
+
+# XXX
+    - match: '.*: model'
+      scope: keyword.control.c
+
+    - match: '.*: '
+      scope: keyword.control.c
+
+#    - match: ':.*'
+#      scope: string
